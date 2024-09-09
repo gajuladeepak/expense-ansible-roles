@@ -1,7 +1,7 @@
 - name: configure mysql server
   hosts: mysql
   become: yes
-  var_files:
+  var-files:
     - /var/expense/credentials_mysql.yaml
   roles:
   - mysql
