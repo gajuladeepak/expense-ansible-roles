@@ -18,4 +18,4 @@
   - name: enabling the service
     ansible.builtin.service:
       name: nginx
-      state: enabled
+      state: started
