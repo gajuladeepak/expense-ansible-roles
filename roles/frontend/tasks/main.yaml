@@ -10,7 +10,7 @@
     enabled: yes
 
 
-- name: import taska from common role
+- name: import tasks from common role
   tags:
   - deployment
   ansible.builtin.import_role:

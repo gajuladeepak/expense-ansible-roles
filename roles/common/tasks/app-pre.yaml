@@ -3,7 +3,7 @@
     path: "{{ app_location }}"
     state: absent
   ignore_errors: true
-
+#why are we adding this line ignore_errors: true while running playbook for the first time there will be no file, we cannot remove the file which is not there
 
 
 - name: create a app directory
@@ -16,8 +16,8 @@
 #     url: "https://expense-builds.s3.us-east-1.amazonaws.com/expense-{{ component }}-v2.zip"
 #     dest: /tmp/backend.zip
 
-- name: "download the {{ component }} code"
-  ansible.builtin.unarchive:
+- name: "download the {{ component }} code" #as we have variable we are placing it in double qoutes
+  ansible.builtin.unarchive: # it can directly get the file from internet and then directly can extract it
     src: "https://expense-builds.s3.us-east-1.amazonaws.com/expense-{{ component }}-v2.zip"
     dest: "{{ app_location }}"
     remote_src: yes

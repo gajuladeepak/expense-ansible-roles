@@ -7,4 +7,10 @@ filters:
 hostnames:
   - private-ip-address
 compose:
-  ansible_host: private_ip_address
+  ansible_host: private_ip_address  #With it, you control exactly where it connects. 
+
+  # what this line do
+  # compose:
+  # ansible_host: private_ip_address
+  #----->It creates the variable ansible_host for each EC2 instance in your inventory.
+  #----->It assigns the value of the instance’s private_ip_address to ansible_host.
